@@ -10,21 +10,21 @@ import model.PilhaInt;
  */
 public class ConverteController {
 	PilhaInt PilhaInt = new PilhaInt();
-	
+
 	public String decToBin(int decimal) {
 		String resultado = "";
-		
+
 		while (decimal > 0) {
-            int resto = decimal % 2;
-            PilhaInt.push(resto);
-            decimal /= 2;
-        }
-		
+			int resto = decimal % 2;
+			PilhaInt.push(resto);
+			decimal = decimal / 2;
+		}
+
 		while (!PilhaInt.isEmpty()) {
 			resultado += Integer.toString(PilhaInt.pop());
 		}
-		
+
 		return resultado;
 	}
-	
+
 }
